@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono Nerd Font :pixelsize=15:antialias=true:autohint=true";
+static char *font = "Monaco Nerd Font :pixelsize=12:antialias=true:autohint=true";
 static char *font2[] = { "JetBrainsMono Nerd Font :pixelsize=15:antialias=true:autohint=true" };
 static int borderpx = 0;
 
@@ -117,40 +117,135 @@ unsigned int tabspaces = 8;
 float alpha = 1.0;
 
 /* Terminal colors (16 first used in escape sequence) */
-static const char *colorname[] = {
-  "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-  "#cc241d",
-  "#98971a",
-  "#d79921",
-  "#458588",
-  "#b16286",
-  "#689d6a",
-  "#a89984",
-  "#928374",
-  "#fb4934",
-  "#b8bb26",
-  "#fabd2f",
-  "#83a598",
-  "#d3869b",
-  "#8ec07c",
-  "#ebdbb2",
-  [255] = 0,
-  /* more colors can be added after 255 to use with DefaultXX */
-  "#add8e6", /* 256 -> cursor */
-  "#555555", /* 257 -> rev cursor*/
-  "#282828", /* 258 -> bg */
-  "#ffffff", /* 259 -> fg */
-};
+// static const char *colorname[] = {
+//   "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+//   "#cc241d",
+//   "#98971a",
+//   "#d79921",
+//   "#458588",
+//   "#b16286",
+//   "#689d6a",
+//   "#a89984",
+//   "#928374",
+//   "#fb4934",
+//   "#b8bb26",
+//   "#fabd2f",
+//   "#83a598",
+//   "#d3869b",
+//   "#8ec07c",
+//   "#ebdbb2",
+//   [255] = 0,
+//   /* more colors can be added after 255 to use with DefaultXX */
+//   "#add8e6", /* 256 -> cursor */
+//   "#555555", /* 257 -> rev cursor*/
+//   "#282828", /* 258 -> bg */
+//   "#ffffff", /* 259 -> fg */
+// };
 
+// gruvbox theme
+// static const char *colorname[] = {
+// 	[0] = "#1d2021", /* hard contrast: #1d2021 / soft contrast: #32302f */
+// 	[1] = "#cc241d", /* red     */
+// 	[2] = "#98971a", /* green   */
+// 	[3] = "#d79921", /* yellow  */
+// 	[4] = "#458588", /* blue    */
+// 	[5] = "#b16286", /* magenta */
+// 	[6] = "#689d6a", /* cyan    */
+// 	[7] = "#a89984", /* white   */
+// 	[8]  = "#928374", /* black   */
+// 	[9]  = "#fb4934", /* red     */
+// 	[10] = "#b8bb26", /* green   */
+// 	[11] = "#fabd2f", /* yellow  */
+// 	[12] = "#83a598", /* blue    */
+// 	[13] = "#d3869b", /* magenta */
+// 	[14] = "#8ec07c", /* cyan    */
+// 	[15] = "#ebdbb2", /* white   */
+// };
+
+// dracula theme
+    /* 8 normal colors */
+// static const char *colorname[] = {
+//     [0] = "#000000", /* black   */
+//     [1] = "#ff5555", /* red     */
+//     [2] = "#50fa7b", /* green   */
+//     [3] = "#f1fa8c", /* yellow  */
+//     [4] = "#bd93f9", /* blue    */
+//     [5] = "#ff79c6", /* magenta */
+//     [6] = "#8be9fd", /* cyan    */
+//     [7] = "#bbbbbb", /* white   */
+//                                   
+//     /* 8 bright colors */
+//     [8]  = "#44475a", /* black   */
+//     [9]  = "#ff5555", /* red     */
+//     [10] = "#50fa7b", /* green   */
+//     [11] = "#f1fa8c", /* yellow  */
+//     [12] = "#bd93f9", /* blue    */
+//     [13] = "#ff79c6", /* magenta */
+//     [14] = "#8be9fd", /* cyan    */
+//     [15] = "#ffffff", /* white   */
+//                                    
+//     /* special colors */
+//     [256] = "#282a36", /* background */
+//     [257] = "#f8f8f2", /* foreground */
+// };
+
+// catpuccin mocha
+static const char *colorname[] = {
+	/* 8 normal colors */
+	"#45475A",
+	"#F38BA8",
+	"#A6E3A1",
+	"#F9E2AF",
+	"#89B4FA",
+	"#F5C2E7",
+	"#94E2D5",
+	"#BAC2DE",
+
+	/* 8 bright colors */
+	"#585B70",
+	"#F38BA8",
+	"#A6E3A1",
+	"#F9E2AF",
+	"#89B4FA",
+	"#F5C2E7",
+	"#94E2D5",
+	"#A6ADC8",
+
+	[256] = "#CDD6F4", /* default foreground colour */
+	[257] = "#1E1E2E", /* default background colour */
+	[258] = "#F5E0DC", /*575268*/
+};
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 259;
-unsigned int defaultbg = 258;
-unsigned int defaultcs = 256;
-unsigned int defaultrcs = 257;
+
+// gruvbox
+// unsigned int defaultfg = 15;
+// unsigned int defaultbg = 0;
+// unsigned int defaultcs = 15;
+
+// dracula
+// unsigned int defaultfg = 257;
+// unsigned int defaultbg = 256;
+// unsigned int defaultcs = 257;
+//
+// unsigned int defaultrcs = 257;
+
+// catpuccin mocha
+unsigned int defaultfg = 256;
+unsigned int defaultbg = 257;
+unsigned int defaultcs = 258;
+static unsigned int defaultrcs = 258;
+
+ /*
+ * Colors used, when the specific fg == defaultfg. So in reverse mode this
+ * will reverse too. Another logic would only make the simple feature too
+ * complex.
+ */
+unsigned int defaultitalic = 7;
+unsigned int defaultunderline = 7;
 
 /*
  * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
@@ -165,7 +260,7 @@ unsigned int defaultrcs = 257;
  * 7: Blinking st cursor
  * 8: Steady st cursor
  */
-static unsigned int cursorshape = 1;
+static unsigned int cursorshape = 5;
 
 /*
  * Default columns and rows numbers
